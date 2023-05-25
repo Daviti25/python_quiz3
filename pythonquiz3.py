@@ -33,6 +33,15 @@ def api_2_2(url):
 
 def api_3_4_6(conn, url):
     cursor = conn.cursor()
+#     cursor.execute('''create table Harry_Potter
+#                     (id integer primary key autoincrement,
+#                     name varchar(100),
+#                     actor varchar(100),
+#                     gender varchar(100),
+#                     birth_date date,
+#                     house varchar(100),
+#                     image varchar(100));''')
+#     conn.commit()
     resp = requests.get(url).text
     resp_dict = json.loads(resp)
     keys = ['name', 'actor', 'gender', 'dateOfBirth', 'house', 'image']
@@ -49,22 +58,11 @@ def api_3_4_6(conn, url):
 
 def main():
     conn = connection('Harry-Potter.sqlite')
-    # api_1('https://hp-api.onrender.com/api/characters')
-    # api_2('https://hp-api.onrender.com/api/characters')
-    # api_2_2('https://hp-api.onrender.com/api/characters')
-    # api_3_4_6(conn, 'https://hp-api.onrender.com/api/characters')
+#     api_1('https://hp-api.onrender.com/api/characters')
+#     api_2('https://hp-api.onrender.com/api/characters')
+#     api_2_2('https://hp-api.onrender.com/api/characters')
+#     api_3_4_6(conn, 'https://hp-api.onrender.com/api/characters')
 
 
 if __name__ == '__main__' :
     main()
-
-
-# cursor.execute('''create table Harry_Potter
-    #                 (id integer primary key autoincrement,
-    #                 name varchar(100),
-    #                 actor varchar(100),
-    #                 gender varchar(100),
-    #                 birth_date date,
-    #                 house varchar(100),
-    #                 image varchar(100));''')
-    # conn.commit()
